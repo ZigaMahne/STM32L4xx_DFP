@@ -1,12 +1,12 @@
 [![Version](https://img.shields.io/github/v/release/Open-CMSIS-Pack/STM32L4xx_DFP)](https://github.com/Open-CMSIS-Pack/STM32L4xx_DFP/releases/latest)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green?label)](https://github.com/Open-CMSIS-Pack/STM32L4xx_DFP/blob/main/LICENSE-Apache-2.0)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-green?label)](https://github.com/Open-CMSIS-Pack/STM32L4xx_DFP/blob/main/LICENSE-BSD-3-Clause)
 
 # STM32L4xx_DFP
 
 This is the development repository for the **STMicroelectronics STM32L4 Series Device Family Pack (DFP)** - a CMSIS software pack that is designed to work with all compiler toolchains (Arm Compiler, GCC, IAR, LLVM). It is released as [CMSIS software pack](https://www.keil.arm.com/packs/stm32l4xx_dfp-keil) and therefore accessible by CMSIS-Pack enabled software development tools.
 
 This DFP uses the generator integration of the [CMSIS-Toolbox to Configure STM32 Devices with CubeMX](https://open-cmsis-pack.github.io/cmsis-toolbox/CubeMX) that is also supported in µVision 5.40 and higher.
-
-> **Note:** This is currently Work in Progress. Final release is expected in Q3'2024.
 
 ## Repository top-level structure
 
@@ -51,10 +51,6 @@ https://github.com/Open-CMSIS-Pack/gen-pack)) generates the software pack. Run t
 The repository uses GitHub Actions to generate the pack:
 
 - `.github/workflows/pack.yml` based on [Open-CMSIS-Pack/gen-pack-action](https://github.com/Open-CMSIS-Pack/gen-pack-action) generates pack using the [Generate software pack](#generate-software-pack) scripts.
-
-## License
-
-The DFP is licensed under [![License](https://img.shields.io/github/license/Open-CMSIS-Pack/STM32L4xx_DFP?label)](https://github.com/Open-CMSIS-Pack/STM32L4xx_DFP/blob/main/LICENSE).
 
 ## Issues
 
