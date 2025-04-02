@@ -13,24 +13,9 @@
   </licenseSets>
 
   <releases>
-    <release version="3.0.0-dev">
-      Updated for new CMSIS-Toolbox CubeMX integration
-      Removed CMSIS Drivers
-      Removed STM32CubeMX_FW_L4
-      Removed board drivers (ADC, Buttons, LED...)
-      Removed all examples
-      Removed previous generator (gpdsc)
-      Added new global generator
-      Package Description (pdsc):
-      - Removed Device:Startup component
-      - Removed Device:STM32Cube HAL components
-      - Removed Device:STM32Cube LL components
-      - Removed Board descriptions
-      - Removed BSP components
-      - Removed compile device header from device description
-      - Removed unused conditions
-      - Replaced documentation files with permalinks
-      - Updated memories regions
+    <release version="3.0.1-dev">
+      Active development ...
+      Updated documentation references
     </release>
     <release version="2.7.0" date="2024-03-27">
       Updated STM32Cube FW to STM32Cube_FW_L4_V1.18.0 (HAL V1.13.4).
@@ -3121,7 +3106,7 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         #define CMSIS_device_header "stm32l4xx.h"
       </RTE_Components_h>
       <files>
-        <file category="doc" name="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CubeMX.md"/>
+        <file category="doc" name="https://open-cmsis-pack.github.io/cmsis-toolbox/CubeMX"/>
       </files>
     </component>
   </components>
