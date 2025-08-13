@@ -16,6 +16,9 @@
   <releases>
     <release version="3.0.1-dev">
       Active development ...
+      Device support:
+      - Shortened device family description
+      - Updated debug configuration files (MCU APBx Freeze registers)
       Updated documentation references
       Reorganized Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
@@ -272,11 +275,7 @@
       <algorithm name="CMSIS/Flash/N25Q128A_STM32L476-Disco.FLM"     start="0x90000000" size="0x01000000" RAMstart="0x20000000" RAMsize="0x000A0000" default="0"/>
 
       <description>
-ST has built a new architecture to reach best-in-class ultra-low-power figures thanks to its high flexibility.
-STM32L4 MCUs have scored 176.7 in the standardized EEMBC ULPBench tests that compare the efficiency of ultra-low-power microcontrollers.
-Moreover, the STM32L4 series shatters performance limits in the ultra-low-power world.
-It delivers 100 DMIPS based on its ARM Cortex-M4 core with FPU and ST ART Accelerator at 80 MHz.
-STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumption with processing demand, low-power peripherals (LP UART, LP timers) available in Stop mode, safety and security features, smart and numerous peripherals, advanced and low-power analog peripherals such as op amps, comparators, LCD, 12-bit DACs and 16-bit ADCs (hardware oversampling).
+Ultra-low-power STM32L4 MCUs with Arm Cortex-M4 core, MPU, DSP, ART Accelerator, FPU, 150 DMIPS at 120MHz.
       </description>
 
       <environment name="uv">
@@ -687,9 +686,9 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
 
         <debugvars configfile="CMSIS/Debug/STM32L41x_42x.dbgconf">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -844,9 +843,9 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
 
         <debugvars configfile="CMSIS/Debug/STM32L41x_42x.dbgconf">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -925,11 +924,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L431xx"/>
         <debug svd="CMSIS/SVD/STM32L4x1.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1065,11 +1064,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L432xx"/>
         <debug svd="CMSIS/SVD/STM32L4x2.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1120,11 +1119,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L433xx"/>
         <debug svd="CMSIS/SVD/STM32L4x3.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1253,11 +1252,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L442xx"/>
         <debug svd="CMSIS/SVD/STM32L4x2.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1300,11 +1299,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L443xx"/>
         <debug svd="CMSIS/SVD/STM32L4x3.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1394,11 +1393,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L451xx"/>
         <debug svd="CMSIS/SVD/STM32L4x1.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1497,11 +1496,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L452xx"/>
         <debug svd="CMSIS/SVD/STM32L4x2.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1618,11 +1617,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L462xx"/>
         <debug svd="CMSIS/SVD/STM32L4x2.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L43x_44x_45x_46x.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E01831;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00030800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1689,11 +1688,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L471xx"/>
         <debug svd="CMSIS/SVD/STM32L4x1.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4x1.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4x1.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x86E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000020;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1792,11 +1791,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L475xx"/>
         <debug svd="CMSIS/SVD/STM32L4x5.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x86E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1873,11 +1872,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L476xx"/>
         <debug svd="CMSIS/SVD/STM32L4x6.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x86E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2026,11 +2025,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L486xx"/>
         <debug svd="CMSIS/SVD/STM32L4x6.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x86E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2097,11 +2096,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L496xx"/>
         <debug svd="CMSIS/SVD/STM32L4x6.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x86E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2242,11 +2241,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L4A6xx"/>
         <debug svd="CMSIS/SVD/STM32L4x6.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4x5_4x6.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x86E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2344,11 +2343,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L4R5xx"/>
         <debug svd="CMSIS/SVD/STM32L4R5.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2462,11 +2461,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L4R7xx"/>
         <debug svd="CMSIS/SVD/STM32L4R7.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2512,11 +2511,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L4R9xx"/>
         <debug svd="CMSIS/SVD/STM32L4R9.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2612,11 +2611,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L4S5xx"/>
         <debug svd="CMSIS/SVD/STM32L4S5.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2674,11 +2673,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L4S7xx"/>
         <debug svd="CMSIS/SVD/STM32L4S7.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2724,11 +2723,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <compile define="STM32L4S9xx"/>
         <debug svd="CMSIS/SVD/STM32L4S9.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2785,11 +2784,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <debug svd="CMSIS/SVD/STM32L4Q5.svd"/>
         <compile define="STM32L4Q5xx"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -2909,11 +2908,11 @@ STM32L4 microcontrollers offer dynamic voltage scaling to balance power consumpt
         <debug svd="CMSIS/SVD/STM32L4P5.svd"/>
         <compile define="STM32L4P5xx"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32L4Rx_4Sx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0x82E0183F;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000022;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4

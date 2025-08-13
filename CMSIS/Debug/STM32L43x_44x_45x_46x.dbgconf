@@ -1,5 +1,5 @@
 // File: STM32L43x_44x_45x_46x.dbgconf
-// Version: 1.0.0
+// Version: 1.0.1
 // Note: refer to STM32L43xxx STM32L44xxx STM32L45xxx STM32L46xxx Reference manual (RM0394)
 //       refer to STM32L431xx STM32L432xx STM32L433xx STM32L442xx STM32L443xx STM32L451xx STM32L452xx STM32L462xx datasheets
 
@@ -26,13 +26,13 @@ DbgMCU_CR = 0x00000007;
 //   <o.4>  DBG_TIM6_STOP            <i> TIM6 counter stopped when core is halted
 //   <o.0>  DBG_TIM2_STOP            <i> TIM2 counter stopped when core is halted
 // </h>
-DbgMCU_APB1_Fz1 = 0x00000000;
+DbgMCU_APB1_Fz1 = 0x82E01831;
 
 // <h> Debug MCU APB1 freeze register 2 (DBGMCU_APB1FZR2)
 //                                   <i> Reserved bits must be kept at reset value
 //   <o.5>  DBG_LPTIM2_STOP          <i> LPTIM2 counter stopped when core is halted
 // </h>
-DbgMCU_APB1_Fz2 = 0x00000000;
+DbgMCU_APB1_Fz2 = 0x00000020;
 
 // <h> Debug MCU APB2 freeze register (DBGMCU_APB2FZR)
 //                                   <i> Reserved bits must be kept at reset value
@@ -40,7 +40,7 @@ DbgMCU_APB1_Fz2 = 0x00000000;
 //   <o.16> DBG_TIM15_STOP           <i> TIM15 counter stopped when core is halted
 //   <o.11> DBG_TIM1_STOP            <i> TIM1 counter stopped when core is halted
 // </h>
-DbgMCU_APB2_Fz = 0x00000000;
+DbgMCU_APB2_Fz = 0x00030800;
 
 // <h> TPIU Pin Routing (TRACECLK fixed on Pin PE2)
 //   <i> TRACECLK: Pin PE2
